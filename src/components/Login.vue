@@ -33,8 +33,8 @@ export default {
     return {
       // 登录表单的数据绑定
       loginForm:{
-        username:'',
-        password:'',
+        username:'admin',
+        password:'123456',
 
       },
       // 表单的验证规则对象
@@ -60,6 +60,10 @@ export default {
         const {data:res}= await this.$http.post('login',this.loginForm);
         if(res.meta.status !== 200) return this.$message.error('登陆失败')
         this.$message.success('登陆成功')
+        //保存token到session
+        window.sessionStorage.setItem('token',res.data.token);
+        //登陆成功后跳转页面 
+        this.$router.push('/home');
       });
     } 
   }
