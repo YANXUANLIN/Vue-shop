@@ -5,6 +5,9 @@ import './plugins/element.js'
 import './assets/css/global.css';
 import './assets/fonts/iconfont.css';
 import axios from 'axios';
+import TreeTable from 'vue-table-with-tree-grid'
+Vue.component('tree-table', TreeTable)
+
 //配置请求的根路径
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
 // axios拦截器 发出请求时候 进行预处理

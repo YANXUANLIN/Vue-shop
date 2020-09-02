@@ -3,7 +3,8 @@ import VueRouter from 'vue-router'
 import Login from '../components/Login.vue';
 import Home from '../components/Home.vue';
 import Welcome from '../components/Welcome.vue';
-import Users from '../components/user/Users.vue';
+import Users from '../components/user/Users.vue'
+import cate from '../components/goods/Cate.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -25,7 +26,8 @@ const routes = [
     redirect: '/welcome',
     children: [
       { path: '/welcome', component: Welcome },
-      { path: '/Users', component: Users }
+      { path: '/Users', component: Users },
+      { path: '/categories', component: cate }
     ]
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
